@@ -99,7 +99,7 @@
           });
 
           $.each(placeholders, function (index, placeholder) {
-            template = template.replace('#' + placeholder.name + '#', placeholder.value);
+            template = template.split('#' + placeholder.name + '#').join(placeholder.value);
           });
 
           $('#preview-iframe').contents().find('html').html(template);
