@@ -6,9 +6,9 @@ use App\Placeholder\Placeholder;
 use Twig\Environment;
 
 /**
- * Class HeaderTemplate
+ * Class FooterTemplate
  */
-class HeaderTemplate implements TemplateInterface
+class FooterTemplate implements TemplateInterface
 {
     /**
      * @var Environment
@@ -29,7 +29,7 @@ class HeaderTemplate implements TemplateInterface
      */
     public function getId(): string
     {
-        return 'header_block';
+        return 'footer_block';
     }
 
     /**
@@ -37,7 +37,7 @@ class HeaderTemplate implements TemplateInterface
      */
     public function getDescription(): string
     {
-        return 'Dashboard header block';
+        return 'Dashboard footer block';
     }
 
     /**
@@ -53,7 +53,7 @@ class HeaderTemplate implements TemplateInterface
      */
     public function getContent(): string
     {
-        return $this->twig->render('block/header_block_default.html.twig');
+        return $this->twig->render('block/footer_block_default.html.twig');
     }
 
     /**
@@ -63,9 +63,9 @@ class HeaderTemplate implements TemplateInterface
     {
         return [
             new Placeholder(
-                'title',
+                'year',
                 function ($context) {
-                    return $context['title'];
+                    return $context['year'];
                 },
             )
         ];
@@ -77,7 +77,7 @@ class HeaderTemplate implements TemplateInterface
     public function getExampleContext(): array
     {
         return [
-            'title' => 'Templatte'
+            'year' => '2019'
         ];
     }
 }

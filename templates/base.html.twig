@@ -28,7 +28,6 @@
 <div id="wrapper">
 
     <div id="content-wrapper" class="d-flex flex-column">
-
         {% block body %}
         {% endblock %}
 
@@ -36,7 +35,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Unbiased 2019</span>
+                    {{ templatte_render('footer_block', { year: 'now' | date('Y') }) }}
                 </div>
             </div>
         </footer>
