@@ -32,7 +32,7 @@ services:
 
     App\TemplateLoader\SourceTemplateLoader:
         arguments:
-            - { consumer_welcome_email: '@App\Template\WelcomeTemplate' }
+            - { consumer_welcome_email: '@App\Template\WelcomeTemplate', header_block: '@App\Template\HeaderTemplate' }
 
     App\TemplateLoader\DynamicTemplateLoader: ~
 
@@ -42,4 +42,5 @@ services:
     App\Renderer: ~
 
     App\Template\WelcomeTemplate: ~
+    App\Template\HeaderTemplate: ~
     App\TemplateLoader\TemplateLoaderInterface: '@App\TemplateLoader\AggregateTemplateLoader'

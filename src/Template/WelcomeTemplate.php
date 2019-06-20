@@ -50,8 +50,25 @@ class WelcomeTemplate implements TemplateInterface
                 'first_name',
                 function ($context) {
                     return $context['first_name'];
-                }
+                },
+            ),
+            new Placeholder(
+                'last_name',
+                function ($context) {
+                    return $context['last_name'];
+                },
             )
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getExampleContext(): array
+    {
+        return [
+            'first_name' => 'Stanistan',
+            'last_name' => 'Baratheon'
         ];
     }
 }

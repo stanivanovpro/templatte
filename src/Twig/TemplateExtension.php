@@ -41,7 +41,7 @@ class TemplateExtension extends AbstractExtension
         return [
             new TwigFunction('templatte_render', function ($id, $context) {
                 return $this->renderer->render($this->loader->load($id), $context);
-            }),
+            }, ['is_safe' => ['html']]),
         ];
     }
 }

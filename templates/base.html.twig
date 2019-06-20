@@ -6,6 +6,8 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {{ templatte_render('header_block', { title: 'Templatte' }) }}
+        <hr>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -53,6 +53,14 @@ class DynamicTemplate implements TemplateInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getExampleContext(): array
+    {
+        return $this->source->getExampleContext();
+    }
+
+    /**
      * @return TemplateInterface
      */
     public function getSource(): TemplateInterface

@@ -80,7 +80,7 @@ class TemplateController extends AbstractController
                 throw new NotFoundHttpException();
             }
 
-            $template = new PersistentTemplate($id, 'email', $source->getContent());
+            $template = new PersistentTemplate($id, $source->getContent());
         }
 
         $form = $this->createForm(TemplateType::class, $template);
@@ -110,7 +110,7 @@ class TemplateController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        $template = new PersistentTemplate($id, 'email', $source->getContent());
+        $template = new PersistentTemplate($id, $source->getContent());
 
         $form = $this->createForm(TemplateType::class, $template, [
             'csrf_protection' => false
@@ -118,9 +118,7 @@ class TemplateController extends AbstractController
 
         if ($form->handleRequest($request)->isSubmitted() && $form->isValid()) {
             return $this->render('preview.html.twig', [
-                'preview' => $this->renderer->render(new DynamicTemplate($template->getContent(), $source), [
-                    'first_name' => 'Arthur'
-                ])
+                'preview' => $this->renderer->render(new DynamicTemplate($template->getContent(), $source), $source->getExampleContext())
             ]);
         }
 

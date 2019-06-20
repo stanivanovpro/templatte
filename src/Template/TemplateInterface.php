@@ -23,4 +23,9 @@ interface TemplateInterface
      * @return Placeholder[]|iterable
      */
     public function getPlaceholders(): iterable;
+
+    /**
+     * @return array
+     */
+    public function getExampleContext(): array;
 }
