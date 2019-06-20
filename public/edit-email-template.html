@@ -17,9 +17,10 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 
-<body id="page-top">
+<body id="page-top" class="bg-gray-100">
 
   <div id="wrapper">
 
@@ -35,7 +36,7 @@
           <p class="mb-4">{{ template.description }}</p>
 
             <div class="row">
-              <div class="col-lg-4 bg-gray-200 p-3">
+              <div class="col-lg-4 p-3">
                 <form>
                   <div class="form-group">
                     <label for="template-content"><b>Template</b></label>
@@ -48,19 +49,20 @@
                   </div>
                 </form>
               </div>
-              <div class="col-lg-6 bg-white">
-                <iframe id="preview-iframe" class="border-0" style="width: 100%; height: 600px;">
+              <div class="col-lg-6 p-3 shadow-lg" id="preview-block">
+                <div class="mb-2 text-white"><b>Preview</b></div>
+                <iframe id="preview-iframe" class="border-0 bg-white" style="width: 100%; height: 600px;">
                 </iframe>
               </div>
-              <div class="col-lg-2">
-                <p><b>Preview data</b></p>
+              <div class="col-lg-2 p-3">
+                <div><b>Preview data</b></div>
                 <div class="form-group">
                   <label for="test-first-name">#first_name#</label>
-                  <input type="text" id="test-first-name" name="first_name" value="John" class="form-control placeholder-field">
+                  <input type="text" id="test-first-name" required name="first_name" value="John" class="form-control placeholder-field">
                 </div>
                 <div class="form-group">
                   <label for="test-last-name">#last_name#</label>
-                  <input type="text" id="test-first-name" name="last_name" value="Doe" class="form-control placeholder-field">
+                  <input type="text" id="test-first-name" required name="last_name" value="Doe" class="form-control placeholder-field">
                 </div>
                 <div class="form-group">
                   <label for="test-phone">#phone#</label>
@@ -89,18 +91,34 @@
     $(document).ready(function() {
         var updatePreview = function() {
           var template = $('#template-content').val(),
-              placeholders = [];
+              placeholders = [],
+              error = '';
 
           $('.placeholder-field').each(function(index, element) {
+            var required = !!$(element).attr('required');
+
             placeholders.push({
               name: element.name,
-              value: element.value
+              value: element.value,
+              required: required
             });
           });
 
-          $.each(placeholders, function (index, placeholder) {
-            template = template.split('#' + placeholder.name + '#').join(placeholder.value);
+          placeholders.forEach(placeholder => {
+            if (placeholder.required && template.indexOf('#' + placeholder.name + '#') < 0) {
+              error += 'Placeholder #' + placeholder.name + '# is required!<br />';
+            }
           });
+
+          if (!error) {
+            $.each(placeholders, function (index, placeholder) {
+              template = template.split('#' + placeholder.name + '#').join(placeholder.value);
+            });
+            $('#preview-block').removeClass('preview-block-error').addClass('preview-block-success');
+          } else {
+            template = error;
+            $('#preview-block').removeClass('preview-block-success').addClass('preview-block-error');
+          }
 
           $('#preview-iframe').contents().find('html').html(template);
         };
@@ -116,6 +134,20 @@
 
     });
   </script>
+
+  <style>
+    html,
+    body {
+      height: 100% !important ;
+    }
+
+    .preview-block-success {
+      background-color: #149063;
+    }
+    .preview-block-error {
+      background-color: #B0413E;
+    }
+  </style>
 
 </body>
 
