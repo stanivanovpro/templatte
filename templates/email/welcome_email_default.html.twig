@@ -1,156 +1,310 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Simple Transactional Email</title>
-    <style>
-        /* -------------------------------------
-            INLINED WITH htmlemail.io/inline
-        ------------------------------------- */
-        /* -------------------------------------
-            RESPONSIVE AND MOBILE FRIENDLY STYLES
-        ------------------------------------- */
-        @media only screen and (max-width: 620px) {
-            table[class=body] h1 {
-                font-size: 28px !important;
-                margin-bottom: 10px !important;
-            }
-            table[class=body] p,
-            table[class=body] ul,
-            table[class=body] ol,
-            table[class=body] td,
-            table[class=body] span,
-            table[class=body] a {
-                font-size: 16px !important;
-            }
-            table[class=body] .wrapper,
-            table[class=body] .article {
-                padding: 10px !important;
-            }
-            table[class=body] .content {
-                padding: 0 !important;
-            }
-            table[class=body] .container {
-                padding: 0 !important;
-                width: 100% !important;
-            }
-            table[class=body] .main {
-                border-left-width: 0 !important;
-                border-radius: 0 !important;
-                border-right-width: 0 !important;
-            }
-            table[class=body] .btn table {
-                width: 100% !important;
-            }
-            table[class=body] .btn a {
-                width: 100% !important;
-            }
-            table[class=body] .img-responsive {
-                height: auto !important;
-                max-width: 100% !important;
-                width: auto !important;
-            }
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+
+    <style type="text/css">
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #ebebeb;
         }
-        /* -------------------------------------
-            PRESERVE THESE STYLES IN THE HEAD
-        ------------------------------------- */
-        @media all {
-            .ExternalClass {
-                width: 100%;
-            }
-            .ExternalClass,
-            .ExternalClass p,
-            .ExternalClass span,
-            .ExternalClass font,
-            .ExternalClass td,
-            .ExternalClass div {
-                line-height: 100%;
-            }
-            .apple-link a {
-                color: inherit !important;
-                font-family: inherit !important;
-                font-size: inherit !important;
-                font-weight: inherit !important;
-                line-height: inherit !important;
-                text-decoration: none !important;
-            }
-            .btn-primary table td:hover {
-                background-color: #34495e !important;
-            }
-            .btn-primary a:hover {
-                background-color: #34495e !important;
-                border-color: #34495e !important;
-            }
+
+        .ExternalClass {
+            width: 100%;
+            background-color: #ebebeb;
         }
+
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(http://www.unbiased.co.uk/broadcast/media/mailchimp/bg-tile.png);
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        @media screen and (max-width: 600px), screen and (max-device-width: 600px) {
+            table[class=container] {
+                width: 95% !important;
+            }
+
+        }
+
+        @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
+            td[class=container-padding] {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+        }
+
+        body {
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            margin: 10px 0;
+            font-family: Helvetica, Verdana, sans-serif;
+        }
+
+        table.container {
+            box-shadow: 0 0 3px #ddd;
+            border: 1px solid #e0e0e0;
+            font-family: Helvetica, Verdana, sans-serif;
+            color: #434343;
+        }
+
+        table.container td.logo {
+            text-align: left;
+            padding: 30px 30px 25px;
+            border-bottom: 1px solid #efefef;
+        }
+
+        table.container td.logo a {
+            display: inline-block;
+            border: 0;
+            text-decoration: none;
+            vertical-align: top;
+        }
+
+        table.container td.logo a img {
+            display: inline-block;
+            bottom: 0;
+            text-decoration: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #333333;
+            line-height: 1.2;
+            margin: 0 0 25px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #007b81;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+            color: #007b81;
+        }
+
+        h5, h6 {
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 0 25px 0;
+            color: #434343;
+        }
+
+        a {
+            color: #f26522;
+            text-decoration: underline;
+        }
+
+        td.container-padding img {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 0 3px #ddd;
+            max-width: 538px;
+        }
+
+        ul li, ol li {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        table.footer {
+            border-top: 1px solid #efefef;
+            width: 100%;
+            height: 69px;
+        }
+
+        table.footer td {
+            vertical-align: middle;
+            text-align: center;
+            color: #434343;
+            font-size: 12px;
+        }
+
+        table.footer td.social {
+            width: 60%;
+            line-height: 20px;
+            border-left: none;
+        }
+
+        table.footer td.social a {
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        table.footer td.social a.twitter {
+            color: #00aced;
+        }
+
+        table.footer td.social a.facebook {
+            color: #6d83bc;
+        }
+
+        table.footer td.social img {
+            vertical-align: middle;
+        }
+
+        table.footer td.subscription {
+            width: 40%;
+        }
+
+        table.footer td.subscription a {
+            color: #434343;
+        }
+
+        .footnotes {
+            color: #999999;
+            font-size: 11px;
+            line-height: 16px;
+            padding: 0;
+            vertical-align: top;
+        }
+        span.preheader {
+            display: none !important;
+        }
+
     </style>
 </head>
-<body class="" style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;">
+<body style="margin:0; padding:10px 0; background-image:url(http://www.unbiased.co.uk/broadcast/media/mailchimp/bg-tile.png);" bgcolor="#f0f0f0">
+<br>
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
     <tr>
-        <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
-        <td class="container" style="font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;">
-            <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
-
-                <!-- START CENTERED WHITE CONTAINER -->
-                <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
-                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
-
-                    <!-- START MAIN CONTENT AREA -->
-                    <tr>
-                        <td class="wrapper" style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;">
-                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-                                <tr>
-                                    <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi #first_name#,</p>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
-                                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
-                                            <tbody>
-                                            <tr>
-                                                <td align="left" style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;">
-                                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;"> <a href="http://htmlemail.io" target="_blank" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">Call To Action</a> </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck! Hope it works.</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-
-                    <!-- END MAIN CONTENT AREA -->
-                </table>
-
-                <!-- START FOOTER -->
-                <div class="footer" style="clear: both; Margin-top: 10px; text-align: center; width: 100%;">
-                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-                        <tr>
-                            <td class="content-block" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                                <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                                <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                                Powered by <a href="http://htmlemail.io" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">HTMLemail</a>.
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <!-- END FOOTER -->
-                <!-- END CENTERED WHITE CONTAINER -->
-            </div>
+        <td align="center" valign="top">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" bgcolor="#ffffff">
+                <tr>
+                    <td class="logo">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <a href="https://unbiased.co.uk"><img src="https://www.unbiased.co.uk/broadcast/media/mailchimp/ub-logo.png" width="140" title="Unbiased.co.uk"></a>
+                                </td>
+                                <td style="text-align:right;" valign="middle" mc:edit="header_right"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="container-padding" bgcolor="#ffffff" style="background-color: #ffffff; padding-left: 30px; padding-right: 30px; padding-bottom: 20px; line-height: 22px;">
+                        <br>
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><div mc:edit="intro" style="font-size:15px;line-height:24px;">Dear #first_name# #last_name#,<br></div></td>
+                            </tr>
+                            <tr>
+                                <td height="20">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div mc:edit="body">Thank you for signing up to Unbiased!
+                                        <br>
+                                        <br>
+                                        To complete your account please click on the following link:
+                                        <br>
+                                        <br>
+                                        <div>
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://unbiased.localhost/consumer/sign-up/confirmation/?token=gOUlnLsWj3W2eVUmbVSjjQyiMxR-z1iog6h7NPw5qH0" style="height:44px;v-text-anchor:middle;width:180px;" arcsize="10%" stroke="`" fillcolor="#F26522">
+                                                <w:anchorlock/>
+                                                <center>
+                                            <![endif]-->
+                                            <a href="http://unbiased.localhost/consumer/sign-up/confirmation/?token=gOUlnLsWj3W2eVUmbVSjjQyiMxR-z1iog6h7NPw5qH0" style="background-color:#F26522;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:15px;font-weight:bold;line-height:44px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;">Confirm your account</a>
+                                            <!--[if mso]>
+                                            </center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                        </div>
+                                        <br>
+                                        This link can only be used once.
+                                        <p style="font-size:15px;color:#4a5359">
+                                            The Unbiased team.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0">
+                        <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb" class="footer">
+                            <tr>
+                                <td class="social" height="60">
+                                    <span style="display: inline-block; height:60px; line-height: 60px; vertical-align: middle">Connect with us:</span>
+                                    <a href="https://twitter.com/unbiaseduk" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #f26522; display: inline-block; font-weight: 700; line-height: inherit; text-decoration: underline; vertical-align: middle"><img src="https://www.unbiased.co.uk/broadcast/media/mailchimp/soc-twitter.png" alt="" width="32" style="-ms-interpolation-mode: bicubic; border: none; display: block; line-height: inherit; outline: none; text-decoration: none; vertical-align: middle"></a>
+                                    <a href="http://www.linkedin.com/groups/unbiasedcouk-professional-adviser-network-2679302" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #f26522; display: inline-block; font-weight: 700; line-height: inherit; text-decoration: underline; vertical-align: middle"><img src="https://www.unbiased.co.uk/broadcast/media/mailchimp/soc-linkedin.png" alt="" width="32" style="-ms-interpolation-mode: bicubic; border: none; display: block; line-height: inherit; outline: none; text-decoration: none; vertical-align: middle"></a>
+                                    <a href="https://www.facebook.com/unbiaseduk" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #f26522; display: inline-block; font-weight: 700; line-height: inherit; text-decoration: underline; vertical-align: middle"><img src="https://www.unbiased.co.uk/broadcast/media/mailchimp/soc-facebook.png" alt="" width="32" style="-ms-interpolation-mode: bicubic; border: none; display: block; line-height: inherit; outline: none; text-decoration: none; vertical-align: middle"></a>
+                                    <a href="https://www.youtube.com/channel/UCziC5nQ17nPzQUtnaL9DODw" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #f26522; display: inline-block; font-weight: 700; line-height: inherit; text-decoration: underline; vertical-align: middle"><img src="https://www.unbiased.co.uk/broadcast/media/mailchimp/soc-youtube.png" alt="" width="32" style="-ms-interpolation-mode: bicubic; border: none; display: block; line-height: inherit; outline: none; text-decoration: none; vertical-align: middle"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
         </td>
-        <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
     </tr>
 </table>
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" valign="top">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="footnotes" valign="top" style="text-align: center;">
+                        <br>
+                        Registered Office: Unbiased Ltd, 12-14 Berry St, London, EC1V 0AU
+                    </td>
+                </tr>
+                <tr style="line-height: inherit">
+                    <td class="unsubscribe" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; line-height: inherit; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; vertical-align: top" valign="top">
+                        <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: 0; line-height: inherit; mso-table-lspace: 0; mso-table-rspace: 0; width: 100%">
+                            <tr style="line-height: inherit">
+                                <td class="unsubscribe_body" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #999999; font-size: 11px; line-height: 16px; mso-table-lspace: 0; mso-table-rspace: 0; padding: 15px 0 0; vertical-align: top; text-align: center;" valign="top">
+                                    Please do not respond to this email, if you have queries please email&nbsp;<a href="mailto:contact@unbiased.co.uk" style="color: #0056DF;word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal;text-decoration: underline;" target="_blank">contact@unbiased.co.uk</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<br>
 </body>
+</html>
