@@ -7,6 +7,12 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
             <!-- Page Heading -->
             <h1 class="h3 mb-2 mt-3 text-gray-800">Manage templates</h1>
             <p class="mb-4">Here's the full list of templates available in the system.</p>

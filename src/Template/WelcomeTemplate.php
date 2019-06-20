@@ -77,7 +77,7 @@ class WelcomeTemplate implements TemplateInterface
             new Placeholder(
                 'phone',
                 function ($context) {
-                    return $context['phone'];
+                    return $context['phone'] ?? null;
                 },
                 false
             ),
