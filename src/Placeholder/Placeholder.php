@@ -28,7 +28,7 @@ class Placeholder
      * @param callable $resolver
      * @param bool $required
      */
-    public function __construct(string $name, callable $resolver, bool $required = false)
+    public function __construct(string $name, callable $resolver, bool $required = true)
     {
         $this->name = $name;
         $this->resolver = $resolver;

@@ -33,8 +33,10 @@
                     <p><b>Preview data</b></p>
                     {% for placeholder in source.placeholders %}
                         <div class="form-group">
-                            <label for="test-first-name">#{{ placeholder.name }}#</label>
-                            <input type="text" id="test-{{ placeholder.name }}" name="{{ placeholder.name }}" value="{{ source.exampleContext[placeholder.name] }}" class="form-control placeholder-field">
+                            <label for="test-first-name">
+                                {% if placeholder.required %}<b>#{{ placeholder.name }}#&nbsp*</b>{% else %}{{ placeholder.name }}{% endif %}
+                            </label>
+                            <input{% if placeholder.required %} data-required="1"{% endif %} type="text" id="test-{{ placeholder.name }}" name="{{ placeholder.name }}" value="{{ source.exampleContext[placeholder.name] }}" class="form-control placeholder-field">
                         </div>
                     {% endfor %}
                 </div>

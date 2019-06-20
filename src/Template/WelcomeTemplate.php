@@ -73,7 +73,14 @@ class WelcomeTemplate implements TemplateInterface
                 function ($context) {
                     return $context['last_name'];
                 },
-            )
+            ),
+            new Placeholder(
+                'phone',
+                function ($context) {
+                    return $context['phone'];
+                },
+                false
+            ),
         ];
     }
 
@@ -84,7 +91,8 @@ class WelcomeTemplate implements TemplateInterface
     {
         return [
             'first_name' => 'Stanistan',
-            'last_name' => 'Baratheon'
+            'last_name' => 'Baratheon',
+            'phone' => '+448675847484'
         ];
     }
 }
