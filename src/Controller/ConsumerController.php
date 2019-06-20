@@ -57,7 +57,8 @@ class ConsumerController extends AbstractController
             $message = new \Swift_Message('Sign up', $this->renderer->render($this->loader->load('consumer_welcome_email'), [
                 'first_name' => $data['firstName'],
                 'last_name' => $data['lastName'],
-                'email' => $data['email']
+                'email' => $data['email'],
+                'phone' => $data['phone'],
             ]), 'text/html');
 
             $message->setSender('unbitest@gmail.com');

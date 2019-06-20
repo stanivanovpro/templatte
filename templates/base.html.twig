@@ -23,6 +23,7 @@
 
 </head>
 <body id="page-top">
+<div class="m-3"><a href="/"><img src="/img/templatte.png" style="height: 60px;" /></a></div>
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -35,7 +36,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    {{ templatte_render('footer_block', { year: 'now' | date('m/d/Y H:i:s') }) }}
+                    {{ templatte_render('footer_block', { time: 'now' | date('m/d/Y H:i:s') }) }}
                 </div>
             </div>
         </footer>

@@ -63,9 +63,9 @@ class FooterTemplate implements TemplateInterface
     {
         return [
             new Placeholder(
-                'year',
+                'time',
                 function ($context) {
-                    return $context['year'];
+                    return $context['time'];
                 },
             )
         ];
@@ -77,7 +77,7 @@ class FooterTemplate implements TemplateInterface
     public function getExampleContext(): array
     {
         return [
-            'year' => '2019'
+            'time' => date('m/d/Y H:i:s')
         ];
     }
 }
