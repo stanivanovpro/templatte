@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.content) }}
+    <button type="submit">Submit</button>
+    {{ form_end(form) }}
+    <hr>
+
+    <form target="_blank" action="{{ path('app_template_preview', { id: template.id }) }}" method="post">
+        <textarea name="template[content]"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

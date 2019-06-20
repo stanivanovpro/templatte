@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        {% for template in templates %}
+            <tr>
+                <td>{{ template.id }}</td>
+                <td><a href="{{ path('app_template_edit', { id: template.id }) }}">Edit</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {{ dump(templates) }}
+{% endblock %}
