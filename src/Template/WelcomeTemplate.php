@@ -35,6 +35,22 @@ class WelcomeTemplate implements TemplateInterface
     /**
      * @inheritDoc
      */
+    public function getDescription(): string
+    {
+        return 'Consumer welcome email';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getType(): string
+    {
+        return 'email';
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getContent(): string
     {
         return $this->twig->render('email/welcome_email_default.html.twig');

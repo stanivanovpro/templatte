@@ -39,6 +39,22 @@ class DynamicTemplate implements TemplateInterface
     /**
      * @inheritDoc
      */
+    public function getDescription(): string
+    {
+        return $this->source->getDescription();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getType(): string
+    {
+        return $this->source->getType();
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getContent(): string
     {
         return $this->content;

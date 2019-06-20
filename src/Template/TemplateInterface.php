@@ -17,12 +17,22 @@ interface TemplateInterface
     /**
      * @return string
      */
+    public function getDescription(): string;
+
+    /**
+     * @return string
+     */
     public function getContent(): string;
 
     /**
      * @return Placeholder[]|iterable
      */
     public function getPlaceholders(): iterable;
+
+    /**
+     * @return string
+     */
+    public function getType(): string;
 
     /**
      * @return array

@@ -1,13 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <table>
-        {% for template in templates %}
-            <tr>
-                <td>{{ template.id }}</td>
-                <td><a href="{{ path('app_template_edit', { id: template.id }) }}">Edit</a></td>
-            </tr>
-        {% endfor %}
-    </table>
-    {{ dump(templates) }}
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 mt-3 text-gray-800">Manage templates</h1>
+            <p class="mb-4">Here's the full list of templates available in the system.</p>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for template in templates %}
+                            <tr>
+                                <td><a href="{{ path('app_template_edit', { id: template.id }) }}">{{ template.id }}</a></td>
+                                <td>{{ template.description }}</td>
+                                <td><span class="badge badge-secondary">{{ template.type }}</span></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
 {% endblock %}

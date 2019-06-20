@@ -35,6 +35,22 @@ class HeaderTemplate implements TemplateInterface
     /**
      * @inheritDoc
      */
+    public function getDescription(): string
+    {
+        return 'Dashboard header block';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getType(): string
+    {
+        return 'block';
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getContent(): string
     {
         return $this->twig->render('block/header_block_default.html.twig');

@@ -75,11 +75,14 @@ class TemplateController extends AbstractController
      */
     public function edit(Request $request, string $id): Response
     {
-        if (!$template = $this->repository->find($id)) {
-            if (!$source = $this->sourceTemplateLoader->load($id)) {
-                throw new NotFoundHttpException();
-            }
+        $default = false;
 
+        if (!$source = $this->sourceTemplateLoader->load($id)) {
+            throw new NotFoundHttpException();
+        }
+
+        if (!$template = $this->repository->find($id)) {
+            $default = true;
             $template = new PersistentTemplate($id, $source->getContent());
         }
 
@@ -94,7 +97,9 @@ class TemplateController extends AbstractController
 
         return $this->render('edit.html.twig', [
             'form' => $form->createView(),
+            'source' => $source,
             'template' => $template,
+            'default' => $default
         ]);
     }
 
